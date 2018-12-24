@@ -1,3 +1,33 @@
 page-home {
+    ion-item { padding-left: 0; }
 
+    .intro-text {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .hidden { visibility: hidden; }
+
+    .calculate-container {
+        text-align: center;
+
+        ion-label {
+            margin: 60px 0;
+
+            button {                
+                font-size: 22px!important;
+                padding: 40px!important;
+                width: 70%;
+            }
+        }
+    }
+
+    input { text-align: right; }
+
+    .result {
+        color: #498aff;
+        font-weight: bold;
+        font-size: 35px;
+        text-align: center;
+    }
 }

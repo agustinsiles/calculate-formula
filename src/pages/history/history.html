@@ -1,0 +1,30 @@
+<ion-header>
+	<ion-navbar>
+		<ion-title>
+			Historial de cálculos
+			<ion-icon 
+				color="danger"
+				name="trash"
+				[hidden]="!history.length"
+				(click)="emptyHistory()">
+			</ion-icon>
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-list *ngIf="history && history.length">
+		<ion-item *ngFor="let item of history">
+			<h2>{{ item.type | uppercase }}</h2>
+			<p>Parámetro A: <i>{{ item.paramA }}</i></p>
+			<p *ngIf="item.paramB">Parámetro B: <i>{{ item.paramB }}</i></p>
+			<p>Resultado: <b>{{ item.result }}</b></p>
+			<ion-note item-end>{{ item.date | date:'dd/MM/yyyy HH:mm:ss' }}</ion-note>
+		</ion-item>
+	</ion-list>
+	<ion-toolbar 
+		color="light" 
+		*ngIf="!history.length">
+		<ion-title>No hay registros guardados.</ion-title> 
+	</ion-toolbar>
+</ion-content>
